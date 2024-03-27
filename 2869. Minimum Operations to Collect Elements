@@ -1,0 +1,21 @@
+class Solution {
+public:
+    int minOperations(vector<int>& nums, int k) {
+
+        int n = nums.size();
+        int i = n-1;
+        unordered_set<int> seen = {};
+
+        while (i >= 0 && seen.size() != k){
+            auto it = seen.find(nums[i]);
+
+            if (nums[i] <= k && it == seen.end()){
+                seen.insert(nums[i]);
+            }
+            i--;
+        }
+        
+        return n-i-1;
+    }
+};
+
