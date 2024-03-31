@@ -1,3 +1,26 @@
+
+//Better solution which just implements gauss in a more efective way (without having to multiply
+class Solution {
+public:
+    long long getDescentPeriods(vector<int>& prices) {
+        int n = prices.size();
+        long long res = n;
+        long long temp = 0;
+
+        for (int i = 1; i < n; ++i){
+            if (prices[i-1] - prices[i] == 1){
+                temp++;
+                res += temp;
+            } else {
+                temp = 0;
+            }
+        }
+        return res;
+    }
+};
+
+
+// My solution using gauss's summation formula
 class Solution {
 public:
     long long getDescentPeriods(vector<int>& prices) {
