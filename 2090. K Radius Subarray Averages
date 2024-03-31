@@ -1,12 +1,12 @@
-
-//My sol 
-// 92%
-
 #include <vector>
 
 class Solution {
 public:
     std::vector<int> getAverages(std::vector<int>& nums, int k) {
+        ios::sync_with_stdio(false);
+        cin.tie(0);
+        cout.tie(0);
+
         int n = nums.size();
         int range = 2 * k + 1; // Size of the sliding window
 
